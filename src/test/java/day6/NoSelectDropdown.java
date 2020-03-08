@@ -33,7 +33,7 @@ public class NoSelectDropdown {
         List<WebElement>allLinks = driver.findElements(By.className("dropdown-item"));
 
         for (WebElement link:allLinks) {
-            System.out.println(link.getText()+", "+link.getAttribute("href"));
+            System.out.println(link.getText()+" : "+link.getAttribute("href"));
 
         }
 
