@@ -10,7 +10,7 @@ public class DriverFactory {
 
     public  static WebDriver createDriver(String browseName){
         if(browseName.equalsIgnoreCase("chrome")){
-            WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().version("79").setup();
             return new ChromeDriver();
         }else if(browseName.equalsIgnoreCase("FireFox")){
 
