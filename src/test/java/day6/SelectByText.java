@@ -12,10 +12,8 @@ import java.util.List;
 public class SelectByText {
     public static void main(String[] args) {
 
-
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/dropdown");
-        driver.manage().window().maximize();
         BrowserUtils.wait(3);
         //create a webelement object for drop-down first
         WebElement simpleDropdown = driver.findElement(By.id("dropdown"));
@@ -24,8 +22,9 @@ public class SelectByText {
         //select by visible text
         selectSimpleDropdown.selectByVisibleText("Option 2");
         BrowserUtils.wait(3);
-
+        //and select option 1
         selectSimpleDropdown.selectByVisibleText("Option 1");
+
 
 
         Select selectYear = new Select(driver.findElement(By.id("year")));
