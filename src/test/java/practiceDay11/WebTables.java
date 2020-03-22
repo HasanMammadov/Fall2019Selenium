@@ -29,7 +29,19 @@ List<String>names = new ArrayList<>();
             names.add(each.getText());
         }
         System.out.println(names);
+    }
+    @Test
+    public void verifyRowCount(){
+        driver.get("http://practice.cybertekschool.com/tables");
 
+        List<WebElement> rows = driver.findElements(By.xpath("//table[@id='table1']//tbody//tr"));
+        System.out.println(rows.size());
+
+        int expected = 4;
+
+        Assert.assertTrue(rows.size()==expected);
+
+      //  Assert.assertEquals(rows.size(),4);
 
     }
 
@@ -38,6 +50,8 @@ List<String>names = new ArrayList<>();
         WebDriverManager.chromedriver().version("79").setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        BrowserUtils.wait(3);
+
     }
     @AfterMethod
     public void tearDown(){
