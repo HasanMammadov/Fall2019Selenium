@@ -105,4 +105,6 @@ public class WebTables {
         WebElement cell = driver.findElement(By.xpath(xpath));
         Assert.assertEquals(cell.getText(), expected);
     }
+
+
 }
