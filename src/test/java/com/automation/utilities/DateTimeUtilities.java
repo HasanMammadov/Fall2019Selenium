@@ -32,7 +32,7 @@ public class DateTimeUtilities {
             LocalTime startTime = LocalTime.parse(start,DateTimeFormatter.ofPattern(format));
             LocalTime endTime = LocalTime.parse(end,DateTimeFormatter.ofPattern(format));
 
-            return ChronoUnit.HOURS.between(startTime,endTime);
+            return ChronoUnit.HOURS.between(startTime,endTime);// bu nese yeni bir seydi
         }
     }
 
