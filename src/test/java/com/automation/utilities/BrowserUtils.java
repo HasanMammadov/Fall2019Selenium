@@ -18,10 +18,17 @@ public class BrowserUtils {
             e.printStackTrace();
         }
     }
+    /**
+     *
+     * @param elements represents collection of WebElements
+     * @return collection of strings
+     */
     public static List<String> getTextFromWebElements(List<WebElement> elements) {
         List<String> textValues = new ArrayList<>();
-        for (WebElement element : elements) {//
-            textValues.add(element.getText());
+        for (WebElement element : elements) {
+            if (!element.getText().isEmpty()) {
+                textValues.add(element.getText());
+            }
         }
         return textValues;
     }

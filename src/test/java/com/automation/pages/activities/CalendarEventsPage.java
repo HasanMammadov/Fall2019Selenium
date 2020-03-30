@@ -4,9 +4,12 @@ import com.automation.pages.AbstractPageBase;
 import com.automation.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import vytrack.AbstractTestBase;
+
+import java.util.List;
 
 public class CalendarEventsPage extends AbstractPageBase {
 
@@ -24,6 +27,17 @@ public class CalendarEventsPage extends AbstractPageBase {
 
     @FindBy(css = "[id^=time_selector_oro_calendar_event_form_end]")
     private WebElement endTime;
+
+
+    @FindBy(css = "[class='grid-header-cell__link']")
+    private List<WebElement> columnsNames;
+
+
+    public List<String> getColumnNames(){
+        BrowserUtils.waitForPageToLoad(15);
+      //  wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[title='Create Calendar event']")));
+        return BrowserUtils.getTextFromWebElements(columnsNames);
+    }
 
     public String getOwnerName(){
         BrowserUtils.waitForPageToLoad(20);
@@ -58,4 +72,7 @@ public class CalendarEventsPage extends AbstractPageBase {
         wait.until(ExpectedConditions.visibilityOf(startTime));
         return endTime.getAttribute("value");
     }
+
+
+
 }
