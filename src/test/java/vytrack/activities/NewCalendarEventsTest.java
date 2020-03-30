@@ -33,6 +33,27 @@ public class NewCalendarEventsTest extends AbstractTestBase {
 
 
     }
+    @Test
+    public void timeDifference(){
+
+    LoginPage loginPage = new LoginPage();
+    CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+
+    loginPage.login();
+    calendarEventsPage.navigateTo("Activities","Calendar Events");
+    calendarEventsPage.clickToCreateCalendarEvent();
+
+    String startTime = calendarEventsPage.getStartTime();
+    String endTime = calendarEventsPage.getEndTime();
+    String format = "h:mm a";
+
+    long actual = DateTimeUtilities.getTimeDifference(startTime,endTime,format);
+    Assert.assertEquals(actual,1);
+
+
+
+
+    }
 
 
 
