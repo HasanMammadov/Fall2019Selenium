@@ -29,14 +29,11 @@ public class CalendarEventsPage extends AbstractPageBase {
     private WebElement endTime;
 
 
-    @FindBy(css = "[class='grid-header-cell__link']")
-    private List<WebElement> columnsNames;
-
-
+    @FindBy(className = "grid-header-cell__label")
+    private List<WebElement> columnNames;
     public List<String> getColumnNames(){
-        BrowserUtils.waitForPageToLoad(15);
-      //  wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[title='Create Calendar event']")));
-        return BrowserUtils.getTextFromWebElements(columnsNames);
+        BrowserUtils.waitForPageToLoad(20);
+        return BrowserUtils.getTextFromWebElements(columnNames);
     }
 
     public String getOwnerName(){

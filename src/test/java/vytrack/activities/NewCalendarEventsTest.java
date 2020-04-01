@@ -7,6 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import vytrack.AbstractTestBase;
 
+import java.util.Arrays;
+import java.util.List;
 
 
 public class NewCalendarEventsTest extends AbstractTestBase {
@@ -51,9 +53,20 @@ public class NewCalendarEventsTest extends AbstractTestBase {
     Assert.assertEquals(actual,1);
 
 
+    }
+    @Test
+    public void verifyColumnName(){
+        LoginPage loginPage = new LoginPage();
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+
+        loginPage.login();
+        calendarEventsPage.navigateTo("Activities","Calendar Events");
+        calendarEventsPage.clickToCreateCalendarEvent();
 
 
 
+        List<String> expected = Arrays.asList("TITLE", "CALENDAR", "START", "END", "RECURRENT", "RECURRENCE", "INVITATION STATUS");
+        Assert.assertEquals(calendarEventsPage.getColumnNames(), expected);
     }
 
 

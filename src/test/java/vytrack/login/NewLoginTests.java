@@ -1,6 +1,7 @@
 package vytrack.login;
 
 import com.automation.pages.LoginPage;
+import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.Driver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,14 +14,16 @@ public class NewLoginTests extends AbstractTestBase {
         LoginPage loginPage = new LoginPage();
         loginPage.login();
 
-        Assert.assertEquals(Driver.getDriver().getTitle(),"Dashboard");
+        Assert.assertEquals(Driver.getDriver().getTitle(),"Dash");
     }
 
 
     @Test
     public void verifyWarningMessage(){
         LoginPage loginPage = new LoginPage();
-        loginPage.login("wrong","wrong");
+        loginPage.login();
         Assert.assertEquals(loginPage.getWarningMessageText(),"Invalid user name or password.");
+        BrowserUtils.getScreenshot("warning_message");
+
     }
 }
