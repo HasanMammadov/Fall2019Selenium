@@ -3,14 +3,15 @@ package vytrack.login;
 import com.automation.pages.LoginPage;
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.Driver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import vytrack.AbstractTestBase;
 
 public class NewLoginTests extends AbstractTestBase {
-    @Test
+    @Test()
     public void verifyPageTitle(){
-
 
         test = report.createTest("Verify page title");
         LoginPage loginPage = new LoginPage();
