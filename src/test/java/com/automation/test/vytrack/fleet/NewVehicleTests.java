@@ -1,11 +1,11 @@
-package vytrack.fleet;
+package com.automation.test.vytrack.fleet;
 
 import com.automation.pages.LoginPage;
 import com.automation.pages.fleet.VehiclesPage;
 import com.automation.utilities.Driver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import vytrack.AbstractTestBase;
+import com.automation.test.vytrack.AbstractTestBase;
 
 public class NewVehicleTests extends AbstractTestBase {
 

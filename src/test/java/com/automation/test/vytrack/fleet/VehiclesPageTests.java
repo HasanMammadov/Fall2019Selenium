@@ -1,4 +1,4 @@
-package vytrack.fleet;
+package com.automation.test.vytrack.fleet;
 import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

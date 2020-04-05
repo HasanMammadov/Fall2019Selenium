@@ -1,4 +1,4 @@
-package vytrack.activities;
+package com.automation.test.vytrack.activities;
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;

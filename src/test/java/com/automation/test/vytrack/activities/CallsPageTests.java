@@ -1,4 +1,4 @@
-package vytrack.activities;
+package com.automation.test.vytrack.activities;
 
 import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
