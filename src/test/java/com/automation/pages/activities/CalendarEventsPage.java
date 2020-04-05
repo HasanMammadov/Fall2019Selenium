@@ -51,7 +51,9 @@ public class CalendarEventsPage extends AbstractPageBase {
 
     public void enterCalendarEventDescription(String description) {
         //wait until frame is available and switch to it
+
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(descriptionFrame));
+        BrowserUtils.waitForPageToLoad(20);
         descriptionTextArea.sendKeys(description);
         driver.switchTo().defaultContent();//exit from the frame
     }
@@ -62,6 +64,7 @@ public class CalendarEventsPage extends AbstractPageBase {
 
     public String getGeneralInfoTitleText() {
         BrowserUtils.waitForPageToLoad(20);
+
         return generalInfoTitle.getText();
     }
 

@@ -45,6 +45,33 @@ public class NewLoginTests extends AbstractTestBase {
         test.pass("Warning message is displayed");
     }
 
+    @DataProvider
+    public Object[][] testData(){
+
+        return new Object[][]{
+                {"storemanager85","UserUser123"},
+                {"salesmanager110","UserUser123"},
+                {"user16","UserUser123"}
+        };
+    }
+
+    @Test(dataProvider = "testData")
+    public void test(String username,String password){
+        test = report.createTest("Verify page title as "+username);
+        LoginPage loginPage = new LoginPage();
+        loginPage.login(username,password);
+        test.info("Login as "+username);
+        BrowserUtils.wait(2);
+
+        Assert.assertEquals(Driver.getDriver().getTitle(),"Dashboard");
+        test.pass("Title was verified as a Dashboard");
+    }
+
+
+
+
+
+
     @Test(dataProvider = "credentials")
     public void loginWithDDT(String userName, String password) {
         test = report.createTest("Verify page title as " + userName);
