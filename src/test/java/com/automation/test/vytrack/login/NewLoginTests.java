@@ -51,7 +51,7 @@ public class NewLoginTests extends AbstractTestBase {
         return new Object[][]{
                 {"storemanager85","UserUser123"},
                 {"salesmanager110","UserUser123"},
-                {"user16","UserUser123"}
+                {"user16",         "UserUser123"}
         };
     }
 
