@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="HomeWork">
+    <test name="Home Work">
+        <!--represents raport name-->
+        <parameter name="reportName" value="HomeWorkVerifyTitle"></parameter>
+        <classes>
+            <class name="com.automation.test.vytrack.activities.NewCalendarEventsTest">
+                <methods>
+                    <!-- this spesific class from execution list. ancaq bu run olacaq-->
+                    <include name="VerifySaveAndCloseAndNewAvailable"/>
+                    <include name="VerifyTitleIsDisplayed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
